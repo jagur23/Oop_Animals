@@ -8,4 +8,8 @@ public class Duck extends Animal{
         super(name, birthday, illness);
         this.wingQuantity = wingQuantity;
     }
+
+    public int getWingQuantity(){
+        return wingQuantity;
+    }
 }

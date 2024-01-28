@@ -36,9 +36,9 @@ public class Animal {
         return getClass().getSimpleName();
     }
 
-    private void wakeUp(){
+    /* private void wakeUp(){
         System.out.println(getType() + " waked up!");
-    }
+    } */
 
     private void wakeUp(String time){
         System.out.println(getType() + " waked up at " + time);
@@ -54,6 +54,18 @@ public class Animal {
 
     private void sleep(){
         System.out.println(getType() + " is sleeping.");
+    }
+
+    public void toGo(){
+        System.out.println(getName() + " is a " + getType() + ", it's walking.");
+    }
+
+    public void toFly(){
+        System.out.println(getName() + " is a " + getType() + ", it's flying.");
+    }
+
+    public void toSwim(){
+        System.out.println(getName() + " is a " + getType() + ", it's swimming.");
     }
 
     public void lifeCycle(){

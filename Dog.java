@@ -6,5 +6,8 @@ public class Dog extends Animal {
         super(name, birthday, illness);
     }
 
-    
+    @Override
+    public void toFly() {
+        System.out.println(getName() + " is a " + getType() + " it can't fly.");
+    }
 }

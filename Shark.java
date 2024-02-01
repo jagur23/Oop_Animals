@@ -15,4 +15,9 @@ public class Shark extends Animal {
     public void toFly() {
         System.out.println(getName() + " is a " + getType() + ", it can't fly.");
     }
+
+    @Override
+    public void eatFood() {
+        System.out.println("rend");
+    }
 }

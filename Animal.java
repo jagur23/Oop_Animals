@@ -1,14 +1,18 @@
 import java.time.LocalDate;
 
-public class Animal {
+public abstract class Animal {
 
     protected String name;
     protected LocalDate birthday;
     protected Illness illness;
 
     public Animal(){
-        this("Vasja", LocalDate.now(), new Illness("Lichen"));
+        
     }
+
+    /* public Animal(){
+        this("Vasja", LocalDate.now(), new Illness("Lichen"));
+    } */
 
     public Animal(String name, LocalDate birthday, Illness illness){
         this.name = name;
@@ -67,6 +71,8 @@ public class Animal {
     public void toSwim(){
         System.out.println(getName() + " is a " + getType() + ", it's swimming.");
     }
+
+    public abstract void eatFood();
 
     public void lifeCycle(){
         wakeUp("12");

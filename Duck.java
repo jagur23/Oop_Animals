@@ -12,4 +12,9 @@ public class Duck extends Animal{
     public int getWingQuantity(){
         return wingQuantity;
     }
+
+    @Override
+    public void eatFood() {
+        System.out.println("pluck");
+    }
 }

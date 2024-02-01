@@ -10,4 +10,9 @@ public class Eagle extends Animal {
     public void toSwim() {
         System.out.println(getName() + " is a " + getType() + ", it can't swim.");
     }
+
+    @Override
+    public void eatFood() {
+         System.out.println("nibble");
+    }
 }

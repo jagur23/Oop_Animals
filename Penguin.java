@@ -1,18 +1,23 @@
 import java.time.LocalDate;
 
-public class Penguin extends Animal {
+public class Penguin extends Animal implements Goable, Swimable{
     
     public Penguin(String name, LocalDate birthday, Illness illness) {
         super(name, birthday, illness);
     }
 
     @Override
-    public void toFly() {
-        System.out.println(getName() + " is a " + getType() + ", it can't fly.");
+    public void eatFood() {
+        System.out.println("bite");
     }
 
     @Override
-    public void eatFood() {
-        System.out.println("bite");
+    public double run() {
+        return 2.0;
+    }
+
+    @Override
+    public double swim() {
+        return 10.0;
     }
 }

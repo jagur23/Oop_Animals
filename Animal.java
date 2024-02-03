@@ -44,7 +44,7 @@ public abstract class Animal {
         System.out.println(getType() + " waked up!");
     } */
 
-    private void wakeUp(String time){
+    /* private void wakeUp(String time){
         System.out.println(getType() + " waked up at " + time);
     }
 
@@ -58,31 +58,20 @@ public abstract class Animal {
 
     private void sleep(){
         System.out.println(getType() + " is sleeping.");
-    }
-
-    public void toGo(){
-        System.out.println(getName() + " is a " + getType() + ", it's walking.");
-    }
-
-    public void toFly(){
-        System.out.println(getName() + " is a " + getType() + ", it's flying.");
-    }
-
-    public void toSwim(){
-        System.out.println(getName() + " is a " + getType() + ", it's swimming.");
-    }
+    }/* */
 
     public abstract void eatFood();
 
-    public void lifeCycle(){
+    
+    /* public void lifeCycle(){
         wakeUp("12");
         hunt();
         eat();
         sleep();
-    }
+    }  */
 
     @Override
     public String toString() {
-        return String.format("Name: %s, birthday: %s, Illness: %s.", name, birthday, illness);
+        return getType() + " / " + String.format("Name: %s, birthday: %s, Illness: %s.", name, birthday, illness);
     }
 }

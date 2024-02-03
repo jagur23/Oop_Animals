@@ -1,5 +1,6 @@
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 public class Main {
@@ -33,9 +34,9 @@ public class Main {
         Animal cat1 = new Cat("Masha", LocalDate.of(2022, 10, 15), new Illness("Overweight"));
         Animal shark1 = new Shark("Sharky", LocalDate.of(2020, 12, 15), new Illness("Parasites"));
         Animal eagle1 = new Eagle("Orel", LocalDate.of(2018, 10, 1), new Illness("Histomoniasis"));
-        Animal penguin1 = new Penguin("Rikko", LocalDate.of(2020, 11, 25), new Illness("Infection"));
+        Animal penguin1 = new Penguin("Rikko", LocalDate.of(2020, 11, 25), new Illness("Infection")); */
 
-        dog1.toGo();
+        /* dog1.toGo();
         dog1.toSwim();
         dog1.toFly();
         System.out.println();
@@ -68,7 +69,7 @@ public class Main {
 
 
         // Seminar 2
-
+        /* 
         List<Goable> goable = new ArrayList<>();
         goable.add(new Cat());
         goable.add(new Dog());
@@ -95,8 +96,6 @@ public class Main {
 
 
 
-
-
         /* Mathable m = new Mathable() {
 
             @Override
@@ -110,20 +109,83 @@ public class Main {
         
 
 
-        Mathable m2 = new Mathable() {
+        // Seminar 2 homework
 
-            @Override
-            public double addition(double a, double b) {
-                // TODO Auto-generated method stub
-                throw new UnsupportedOperationException("Unimplemented method 'addition'");
-            }
 
-            @Override
-            public double multiply(double x, double y) {
-                // TODO Auto-generated method stub
-                throw new UnsupportedOperationException("Unimplemented method 'multiply'");
-            }
-            
-        };
+        /* Создать класс Doctor и подумать над его состоянием и поведением. 
+        
+        Создать класс Nurse(медсестра) и подумать над его состоянием и поведением. 
+        
+        Создайте интерфейсы Goable, Flyable, Swimable. У интерфейсов должны быть методы 
+        получения скорости заданного действия: double run(), double fly(), double swim()
+
+        Добавьте наследников этим интерфейсам, но таким образом, чтобы у каждого интерфейса 
+        было минимум по два наследника (при необходимости, добавьте в приложение новые классы)
+
+        Создать класс ВетеринарнаяКлиника (VeterinaryClinic) У ветеринарной клиники добавьте 
+        методы получения всех бегающих, всех плавающих и всех летающих, а также методы для работы с персоналом клиники.
+        */
+
+        List<Animal> sickAnimalList = new LinkedList<>();
+        List<Animal> animalWithDiagnose = new LinkedList<>();
+        List<Animal> curedAnimalList = new ArrayList<>();
+        List<ClinicPersonal> allPersonalList = new ArrayList<>();
+        List<Object> vetPersonalList = new ArrayList<>();
+
+        VeterinaryClinic happyPets = new VeterinaryClinic("Happy pets", vetPersonalList);
+        Nurse nurse1 = new Nurse("Lana", "Danilova", 125558);
+        Doctor doctor1 = new Doctor("Vasilij", "Pupkov", 255889, nurse1);
+        Doctor doctor2 = new Doctor("Roman", "Krilov", 1255580);
+
+        System.out.println(happyPets);
+
+        vetPersonalList.add(doctor1);
+        vetPersonalList.add(doctor2);
+        vetPersonalList.add(nurse1);
+        System.out.println(vetPersonalList);
+
+        allPersonalList.add(doctor1);
+        allPersonalList.add(doctor2);
+        allPersonalList.add(nurse1);
+        VeterinaryClinic.printAllPersonal(allPersonalList);
+
+        nurse1.doPetRegistration(sickAnimalList, new Dog("Sharik", LocalDate.of(2022, 1, 6), null));
+        nurse1.doPetRegistration(sickAnimalList, new Cat("Boris", LocalDate.of(2020, 8, 8), null));
+        nurse1.doPetRegistration(sickAnimalList, new Dog("Peach", LocalDate.of(2021, 8, 23), null));
+        nurse1.doPetRegistration(sickAnimalList, new Duck("Krja", LocalDate.of(2021, 8, 15), null, 2));
+        nurse1.doPetRegistration(sickAnimalList, new Cat("Masha", LocalDate.of(2022, 10, 15), null));
+        nurse1.doPetRegistration(sickAnimalList, new Shark("Sharky", LocalDate.of(2020, 12, 15), null));
+        nurse1.doPetRegistration(sickAnimalList, new Eagle("Orel", LocalDate.of(2018, 10, 1), null));
+        nurse1.doPetRegistration(sickAnimalList, new Penguin("Rikko", LocalDate.of(2020, 11, 25), null));
+        
+        System.out.println("============Goables========");
+        happyPets.getGoables(sickAnimalList);
+        System.out.println();
+
+        System.out.println("============Swimables========");
+        happyPets.getSwimables(sickAnimalList);
+        System.out.println();
+
+        System.out.println("============Flyable==========");
+        happyPets.getFlyables(sickAnimalList);
+        System.out.println();
+
+        happyPets.printAnimalList(sickAnimalList);
+        System.out.println();
+
+        doctor1.doDiagnose(sickAnimalList, animalWithDiagnose, new Illness("Broken leg"));
+        doctor1.doDiagnose(sickAnimalList, animalWithDiagnose, new Illness("Vaccination"));
+        happyPets.printAnimalList(animalWithDiagnose);
+
+        doctor1.doTreatment(animalWithDiagnose, curedAnimalList);
+        happyPets.printAnimalList(curedAnimalList);
+        
+        VeterinaryClinic.printAllPersonal(allPersonalList);
+        //double cat1Speed = ((Cat) cat1).swim();
+        //System.out.println(cat1Speed);
+        //VeterinaryClinic.getAllDoctors(allPersonalList);
+        //VeterinaryClinic.getAllNurses(allPersonalList);
+        //System.out.println(doctor1.getDoctorInfo());
+        //System.out.println(allPersonalList);
     }
 }

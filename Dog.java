@@ -1,18 +1,9 @@
 import java.time.LocalDate;
 
-public class Dog extends Animal implements Goable{
-
-    public Dog(){
-        
-    }
+public class Dog extends Animal implements Goable, Swimable{
 
     public Dog(String name, LocalDate birthday, Illness illness) {
         super(name, birthday, illness);
-    }
-
-    @Override
-    public void toFly() {
-        System.out.println(getName() + " is a " + getType() + " it can't fly.");
     }
 
     @Override
@@ -21,7 +12,12 @@ public class Dog extends Animal implements Goable{
     }
 
     @Override
-    public double go() {
-        return 5;
+    public double run() {
+        return 15.0;
     }
+
+    @Override
+    public double swim() {
+        return 4.0;
+    } 
 }

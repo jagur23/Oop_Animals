@@ -1,7 +1,18 @@
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
+
+import drugstore.Component;
+import drugstore.Pharmacy;
+import drugstore.PharmacyIterable;
+import drugstore.components.Pinicillin;
+import drugstore.components.Salt;
+import drugstore.components.Water;
 
 public class Main {
     public static void main(String[] args) {
@@ -126,7 +137,9 @@ public class Main {
         методы получения всех бегающих, всех плавающих и всех летающих, а также методы для работы с персоналом клиники.
         */
 
-        List<Animal> sickAnimalList = new LinkedList<>();
+        /* List<Animal> sickAnimalList = new LinkedList<>();
+
+
         List<Animal> animalWithDiagnose = new LinkedList<>();
         List<Animal> curedAnimalList = new ArrayList<>();
         List<ClinicPersonal> allPersonalList = new ArrayList<>();
@@ -186,6 +199,78 @@ public class Main {
         //VeterinaryClinic.getAllDoctors(allPersonalList);
         //VeterinaryClinic.getAllNurses(allPersonalList);
         //System.out.println(doctor1.getDoctorInfo());
-        //System.out.println(allPersonalList);
+        //System.out.println(allPersonalList); */
+
+
+
+        //Seminar 3.
+
+        Pharmacy pharmacy1 = new Pharmacy();
+        pharmacy1
+                .addComponents(new Pinicillin("Component1", 2.0, 10))
+                .addComponents(new Salt("Water", 5.0, 100));
+
+        Pharmacy pharmacy2 = new Pharmacy();
+        pharmacy2
+                .addComponents(new Salt("Salt", 10.0, 50));
+
+
+        Iterator<Component> iter = pharmacy1;
+
+        /* while(iter.hasNext()){
+            System.out.println(iter.next()); 
+        } */
+
+
+        PharmacyIterable p1 = new PharmacyIterable();
+        p1
+            .addComponents(new Pinicillin("Component1", 2.0, 10))
+            .addComponents(new Water("Spring Water", 44.0, 99))
+            .addComponents(new Salt("Merisuola", 66.0, 59));
+
+        PharmacyIterable p2 = new PharmacyIterable();
+        p2
+            .addComponents(new Pinicillin("Penicillin", 2.0, 10))
+            .addComponents(new Water("Spring Water", 44.0, 99))
+            .addComponents(new Salt("Merisuola", 20.0, 70));
+        
+
+        PharmacyIterable p3 = new PharmacyIterable();
+        p3
+            .addComponents(new Pinicillin("Penicillin", 2.0, 10))
+            .addComponents(new Water("Spring Water", 44.0, 99))
+            .addComponents(new Salt("Merisuola", 20.0, 70));
+
+
+        List<PharmacyIterable> pharmacyIterables = new ArrayList<>();
+        pharmacyIterables.add(p1);
+        pharmacyIterables.add(p2);
+        pharmacyIterables.add(p3);
+
+        /* for (Component component : pharmacy3) {
+            System.out.println(component);
+        } */
+
+        /* for (int i = 0; i < pharmacy3.getSize(); i++) {
+            System.out.println(pharmacy3.getComponent(i));
+        } */
+
+
+        Component c1 = new Pinicillin("newOne",100, 45);
+        Component c2 = new Water("newWater",101, 1000);
+        Component c3 = new Salt("redsalt",30, 10);
+
+        List<Component> cList = new ArrayList<>();
+        cList.add(c1);
+        cList.add(c2);
+        cList.add(c3);
+        cList.add(c1);
+
+        System.out.println(cList);
+        Collections.sort(cList, Comparator.reverseOrder());
+        System.out.println(cList);
+
+
+            
     }
 }

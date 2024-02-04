@@ -61,9 +61,16 @@ public class PharmacyIterable implements Iterable<Component>, Comparable<Pharmac
 	}
 
 	@Override
-	public int compareTo(PharmacyIterable o) {
-		return 0;
+	public int compareTo(PharmacyIterable components) {
+		//if(this.components.size() > components.getSize()) return 1;
+		//else if(this.components.size() < components.getSize()) return -1;
+		//else return 0;
+
+		return Integer.compare(this.components.size(), components.getSize());
 	}
 
-
+	@Override
+	public String toString() {
+		return components.toString();
+	}
 }

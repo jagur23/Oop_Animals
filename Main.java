@@ -205,7 +205,7 @@ public class Main {
 
         //Seminar 3.
 
-        Pharmacy pharmacy1 = new Pharmacy();
+       /*  Pharmacy pharmacy1 = new Pharmacy();
         pharmacy1
                 .addComponents(new Pinicillin("Component1", 2.0, 10))
                 .addComponents(new Salt("Water", 5.0, 100));
@@ -225,27 +225,31 @@ public class Main {
         PharmacyIterable p1 = new PharmacyIterable();
         p1
             .addComponents(new Pinicillin("Component1", 2.0, 10))
-            .addComponents(new Water("Spring Water", 44.0, 99))
+            .addComponents(new Water("Spring Water", 22.0, 99))
             .addComponents(new Salt("Merisuola", 66.0, 59));
 
         PharmacyIterable p2 = new PharmacyIterable();
         p2
-            .addComponents(new Pinicillin("Penicillin", 2.0, 10))
-            .addComponents(new Water("Spring Water", 44.0, 99))
-            .addComponents(new Salt("Merisuola", 20.0, 70));
+            .addComponents(new Pinicillin("Coffeine", 15.0, 10))
+            .addComponents(new Water("Spring Water", 44.0, 50));
+            //.addComponents(new Salt("Merisuola", 20.0, 70));
         
 
         PharmacyIterable p3 = new PharmacyIterable();
         p3
-            .addComponents(new Pinicillin("Penicillin", 2.0, 10))
-            .addComponents(new Water("Spring Water", 44.0, 99))
-            .addComponents(new Salt("Merisuola", 20.0, 70));
+            .addComponents(new Pinicillin("Penicillin", 2.0, 10));
+            //.addComponents(new Water("Spring Water", 44.0, 99))
+            //.addComponents(new Salt("Merisuola", 20.0, 70));
 
 
-        List<PharmacyIterable> pharmacyIterables = new ArrayList<>();
-        pharmacyIterables.add(p1);
-        pharmacyIterables.add(p2);
-        pharmacyIterables.add(p3);
+        List<PharmacyIterable> pharmacyList = new ArrayList<>();
+        pharmacyList.add(p1);
+        pharmacyList.add(p2);
+        pharmacyList.add(p3);
+
+        System.out.println(pharmacyList);
+        Collections.sort(pharmacyList); // сортировка по количеству компонентов в лекарстве, по возрастанию.
+        System.out.println(pharmacyList);
 
         /* for (Component component : pharmacy3) {
             System.out.println(component);
@@ -256,7 +260,7 @@ public class Main {
         } */
 
 
-        Component c1 = new Pinicillin("newOne",100, 45);
+        /* Component c1 = new Pinicillin("newOne",100, 45);
         Component c2 = new Water("newWater",101, 1000);
         Component c3 = new Salt("redsalt",30, 10);
 
@@ -268,9 +272,7 @@ public class Main {
 
         System.out.println(cList);
         Collections.sort(cList, Comparator.reverseOrder());
-        System.out.println(cList);
+        System.out.println(cList); */
 
-
-            
     }
 }

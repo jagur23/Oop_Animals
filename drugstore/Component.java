@@ -14,7 +14,7 @@ public abstract class Component implements Comparable<Component>{
 
     @Override
     public String toString() {
-       return String.format("Title: %s / Weight: %s / Power: %s\n", title, weight, power);
+       return String.format("TITLE: %s W: %s P: %s\t", title, weight, power);
     }
 
     @Override

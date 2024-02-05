@@ -230,7 +230,7 @@ public class Main {
 
         PharmacyIterable p2 = new PharmacyIterable();
         p2
-            .addComponents(new Pinicillin("Coffeine", 15.0, 10))
+            .addComponents(new Pinicillin("Coffeine", 15.0, 1000))
             .addComponents(new Water("Spring Water", 44.0, 50));
             //.addComponents(new Salt("Merisuola", 20.0, 70));
         
@@ -248,7 +248,8 @@ public class Main {
         pharmacyList.add(p3);
 
         System.out.println(pharmacyList);
-        Collections.sort(pharmacyList); // сортировка по количеству компонентов в лекарстве, по возрастанию.
+        System.out.println();
+        Collections.sort(pharmacyList); // сортировка по количеству полной силы (fullPower) лекарства (power + weight), по возрастанию.
         System.out.println(pharmacyList);
 
         /* for (Component component : pharmacy3) {

@@ -9,6 +9,7 @@ public class PharmacyIterable implements Iterable<Component>, Comparable<Pharmac
     private List<Component> components;
     private int index;
 	private int size = 0;
+	private int fullPower;
 
 
     public PharmacyIterable(){
@@ -19,8 +20,13 @@ public class PharmacyIterable implements Iterable<Component>, Comparable<Pharmac
     public PharmacyIterable addComponents(Component item){
 		size++;
         components.add(item);
+		fullPower += item.getComponentFullPower();
         return this;
     }
+
+	public int getFullPower(){
+		return fullPower;
+	}
 
 	public int getSize(){
 		return size;
@@ -62,11 +68,12 @@ public class PharmacyIterable implements Iterable<Component>, Comparable<Pharmac
 
 	@Override
 	public int compareTo(PharmacyIterable components) {
-		//if(this.components.size() > components.getSize()) return 1;
-		//else if(this.components.size() < components.getSize()) return -1;
-		//else return 0;
 
-		return Integer.compare(this.components.size(), components.getSize());
+		/* if(this.fullPower > components.getFullPower()) return 1;
+		else if(this.fullPower < components.getFullPower()) return -1;
+		else return 0; */
+
+		return Integer.compare(this.fullPower, components.getFullPower());
 	}
 
 	@Override

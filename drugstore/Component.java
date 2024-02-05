@@ -27,4 +27,8 @@ public abstract class Component implements Comparable<Component>{
 
         // закоментированный код, то же самое, что и return ниже.
     }
+
+    public double getComponentFullPower(){
+        return power + weight;
+    }
 }
